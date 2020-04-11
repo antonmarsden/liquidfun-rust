@@ -10,6 +10,9 @@ readme = "README.md"
 keywords = ["liquidfun", "box2d", "particle", "physics", "game"]
 build = "src/build.rs"
 
+[lib]
+doctest = false
+
 [build-dependencies]
 cc = "1.0"
 
