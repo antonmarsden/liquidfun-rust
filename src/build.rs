@@ -1,10 +1,10 @@
-extern crate gcc;
+extern crate cc;
 
 use std::env;
 use std::path::{Path};
 
 fn main() {
-    let mut config = gcc::Config::new();
+    let mut config = cc::Build::new();
 
     config.cpp(true)
 	    .file("liquidfun-c/c_box2d.cpp")

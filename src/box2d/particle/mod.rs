@@ -11,54 +11,54 @@ use super::common::settings::*;
 
 bitflags! {
 	/// The particle type. Can be combined with the | operator.
-    flags ParticleFlags: UInt32 {
+    pub struct ParticleFlags: UInt32 {
 		/// Water particle.
-		const WATER_PARTICLE = 0,
+		const WATER_PARTICLE = 0;
 
 		/// Removed after next simulation step.
-		const ZOMBIE_PARTICLE = 1 << 1,
+		const ZOMBIE_PARTICLE = 1 << 1;
 
 		/// Zero velocity.
-		const WALL_PARTICLE = 1 << 2,
+		const WALL_PARTICLE = 1 << 2;
 		/// With restitution from stretching.
-		const SPRING_PARTICLE = 1 << 3,
+		const SPRING_PARTICLE = 1 << 3;
 		/// With restitution from deformation.
-		const ELASTIC_PARTICLE = 1 << 4,
+		const ELASTIC_PARTICLE = 1 << 4;
 		/// With viscosity.
-		const VISCOUS_PARTICLE = 1 << 5,
+		const VISCOUS_PARTICLE = 1 << 5;
 		/// Without isotropic pressure.
-		const POWDER_PARTICLE = 1 << 6,
+		const POWDER_PARTICLE = 1 << 6;
 		/// With surface tension.
-		const TENSILE_PARTICLE = 1 << 7,
+		const TENSILE_PARTICLE = 1 << 7;
 		/// Mix color between contacting particles.
-		const COLOR_MIXING_PARTICLE = 1 << 8,
+		const COLOR_MIXING_PARTICLE = 1 << 8;
 		/// Call b2DestructionListener on destruction.
-		const DESTRUCTION_LISTENER_PARTICLE = 1 << 9,
+		const DESTRUCTION_LISTENER_PARTICLE = 1 << 9;
 		/// Prevents other particles from leaking.
-		const BARRIER_PARTICLE = 1 << 10,
+		const BARRIER_PARTICLE = 1 << 10;
 		/// Less compressibility.
-		const STATIC_PRESSURE_PARTICLE = 1 << 11,
+		const STATIC_PRESSURE_PARTICLE = 1 << 11;
 		/// Makes pairs or triads with other particles.
-		const REACTIVE_PARTICLE = 1 << 12,
+		const REACTIVE_PARTICLE = 1 << 12;
 		/// With high repulsive force.
-		const REPULSIVE_PARTICLE = 1 << 13,
+		const REPULSIVE_PARTICLE = 1 << 13;
 		/// Call b2ContactListener when this particle is about to interact with
 		/// a rigid body or stops interacting with a rigid body.
 		/// This results in an expensive operation compared to using
 		/// b2_fixtureContactFilterParticle to detect collisions between
 		/// particles.
-		const FIXTURE_CONTACT_LISTENER_PARTICLE = 1 << 14,
+		const FIXTURE_CONTACT_LISTENER_PARTICLE = 1 << 14;
 		/// Call b2ContactListener when this particle is about to interact with
 		/// another particle or stops interacting with another particle.
 		/// This results in an expensive operation compared to using
 		/// b2_particleContactFilterParticle to detect collisions between
 		/// particles.
-		const PARTICLE_CONTACT_LISTENER_PARTICLE = 1 << 15,
+		const PARTICLE_CONTACT_LISTENER_PARTICLE = 1 << 15;
 		/// Call b2ContactFilter when this particle interacts with rigid bodies.
-		const FIXTURE_CONTACT_FILTER_PARTICLE = 1 << 16,
+		const FIXTURE_CONTACT_FILTER_PARTICLE = 1 << 16;
 		/// Call b2ContactFilter when this particle interacts with other
 		/// particles.
-		const PARTICLE_CONTACT_FILTER_PARTICLE = 1 << 17,
+		const PARTICLE_CONTACT_FILTER_PARTICLE = 1 << 17;
     }
 }
 

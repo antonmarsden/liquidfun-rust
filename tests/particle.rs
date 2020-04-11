@@ -31,11 +31,11 @@ fn set_and_get_particle_flags() {
    let particle_system = world.create_particle_system(&particle_system_def);
 
    let mut pd = ParticleDef::default();
-   pd.flags = ZOMBIE_PARTICLE;
+   pd.flags = ParticleFlags::ZOMBIE_PARTICLE;
    let particle_index = particle_system.create_particle(&pd);
    let flags = particle_system.get_particle_flags(particle_index);
    assert!(flags.is_some());
-   assert_eq!(flags.unwrap(), ZOMBIE_PARTICLE);
+   assert_eq!(flags.unwrap(), ParticleFlags::ZOMBIE_PARTICLE);
 }
 
 #[test]
